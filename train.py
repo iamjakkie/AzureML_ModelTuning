@@ -10,19 +10,7 @@ import pandas as pd
 from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
-# TODO: Create TabularDataset using TabularDatasetFactory
-# Data is located at:
-# "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
-ds = 
-
-x, y = clean_data(ds)
-
-# TODO: Split data into train and test sets.
-
-a
-
-run = Run.get_context()
 
 def clean_data(data):
     # Dict for cleaning data
@@ -52,6 +40,14 @@ def clean_data(data):
     
 
 def main():
+    path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
+    ds = TabularDatasetFactory.from_delimited_files(path)
+
+    x, y = clean_data(ds)
+
+    x_train, x_test, y_train, y_test = train_test_split(x,y)
+
+    run = Run.get_context()
     # Add arguments to script
     parser = argparse.ArgumentParser()
 
