@@ -45,10 +45,9 @@ Steps taken:
 
 ## Pipeline comparison
 **Hyperparameter Tuning**
-![img](/img/hyperparameter.PNG)
-
+![img](/img/hyperparameter.png)
 **AutoML**
-![img](/img/automl.PNG)
+![img](/img/automl.png)
 
 The main difference between these two approaches was that AutoML has checked every model possible for the given task, whereas Hyperparameter tuning was just searching through different variations of the single model. In theory I think Hyperparameter tuning should be easier and faster, but it relies heavily on chosen parameters, policies etc.
 
