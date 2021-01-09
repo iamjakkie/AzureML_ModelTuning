@@ -51,6 +51,15 @@ Steps taken:
 
 The main difference between these two approaches was that AutoML has checked every model possible for the given task, whereas Hyperparameter tuning was just searching through different variations of the single model. In theory I think Hyperparameter tuning should be easier and faster, but it relies heavily on chosen parameters, policies etc.
 
+![img](/img/hyperparameters.PNG)
+![img](/img/xgb.PNG)
+![img](/img/votingensemble.PNG)
+
+Only VotingEnsemble model performed better than hyperparemeter pipeline. We could re-configure AutoML to use the same validation set for calculating accuracy and probably we would receive more than one model with accuracy > .9135712
+
+The best run for hyperparameter pipeline set --C to 19.417 and --max_iter to 1000.
+
+
 ## Future work
 AutoML could be tuned using in-built features like featurization or n-cross validation just to make sure there was no data skew in train/test dataset.
 Additional data could also improve the performance of both pipelines.
